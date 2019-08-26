@@ -3,7 +3,7 @@ version: '3.5'
 services:
 
   up42cc:
-    container_name: up24cc
+    container_name: up42cc
     build:
       context: .
     ports:
