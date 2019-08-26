@@ -2,7 +2,6 @@ package org.n1c0sh.up42cc.api;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.AdditionalMatchers;
 import org.n1c0sh.up42cc.dto.Feature;
 import org.n1c0sh.up42cc.dto.FeatureProperties;
 import org.n1c0sh.up42cc.exceptions.FeatureNotFoundException;
@@ -13,15 +12,13 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import java.awt.*;
-import java.util.*;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
-import static org.mockito.AdditionalMatchers.aryEq;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
