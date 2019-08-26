@@ -28,7 +28,7 @@ public class FeatureDaoImpl implements FeatureDao {
     @PostConstruct
     public void init() throws IOException {
         var typeRef = new TypeReference<List<FeatureCollection>>() {};
-        List<FeatureCollection> featureCollections = mapper.readValue(dataResource.getFile(), typeRef);
+        List<FeatureCollection> featureCollections = mapper.readValue(dataResource.getInputStream(), typeRef);
         featureCollections.parallelStream()
                 .map(featureCollection -> featureCollection.getFeatures().get(0)) //Based on the file provided, assuming there will always be exactly one feature
                 .forEach(feature -> featuresMap.put(feature.getProperties().getId(), feature));
